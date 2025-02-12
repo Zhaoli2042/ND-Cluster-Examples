@@ -15,6 +15,11 @@ conda activate classy-yarp
 pip install .
 pip install pytest
 ```
+4. Set pysisyphus paths
+```
+printf "[xtb]\ncmd=xtb" > ~/.pysisyphusrc
+```
+
 4. Run YARP example by running pytest
 ```
 cd pyTEST_Example/
