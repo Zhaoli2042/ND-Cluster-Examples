@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#$ -pe smp 3           # Specify parallel environment and legal core size
+#$ -q gpu
+#$ -l gpu_card=3        # Specify queue
+#$ -N job_name         # Specify job name
+#$ -t 1-3              # Specify number of tasks in array
+
+module load python
+module load nvhpc
+
+nvidia-smi
+
+/afs/crc.nd.edu/user/z/zli43/GPU-Example/nvc_main.x > /afs/crc.nd.edu/user/z/zli43/GPU-Example/JobArray/$SGE_TASK_ID/output.txt
